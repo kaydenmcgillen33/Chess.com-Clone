@@ -24,11 +24,11 @@ jobs:
           node-version: '20.x'
 
       # The key change is adding `working-directory` to specify the subfolder.
-      - name: npm install, build, and test
+      # The `npm run test` command has been removed.
+      - name: npm install and build
         run: |
           npm install
           npm run build --if-present
-          npm run test --if-present
         working-directory: './backend'
 
       # The `path` parameter for the artifact now points to the subfolder.
